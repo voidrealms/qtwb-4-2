@@ -25,7 +25,7 @@ void Dialog::init()
 
 void Dialog::load()
 {
-    QSettings settings;
+    QSettings setting("MyCompany","MyApp");
 
     ui->comboBox->setCurrentText(settings.value("text","").toString());
 
@@ -48,7 +48,7 @@ void Dialog::load()
 
 void Dialog::save()
 {
-    QSettings settings;
+    QSettings setting("MyCompany","MyApp");
     settings.clear();
 
     settings.setValue("text",ui->comboBox->currentText());
@@ -113,22 +113,3 @@ void Dialog::on_buttonBox_clicked(QAbstractButton *button)
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
