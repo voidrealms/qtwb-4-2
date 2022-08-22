@@ -27,7 +27,7 @@ void Dialog::load()
 {
     QSettings setting("MyCompany","MyApp");
 
-    ui->comboBox->setCurrentText(settings.value("text","").toString());
+    //ui->comboBox->setCurrentText(settings.value("text","").toString());
 
     int combosize = settings.beginReadArray("combo");
     for (int i = 0;i < combosize; i++)
@@ -44,6 +44,7 @@ void Dialog::load()
         ui->listWidget->addItem(settings.value("item","").toString());
     }
     settings.endArray();
+    ui->comboBox->setCurrentText(settings.value("text","").toString());
 }
 
 void Dialog::save()
